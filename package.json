@@ -25,5 +25,10 @@
             }
         ]
     },
-    "publisher": "YisroelYakovson"
+    "publisher": "YisroelYakovson",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/YizYah/ava-recipes"
+    },
+    "homepage": "https://github.com/YizYah/ava-recipes"
 }
