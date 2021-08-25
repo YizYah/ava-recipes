@@ -1,0 +1,20 @@
+{
+	"Add ava to package.json": {
+		"scope": "json",
+		"prefix": "ava",
+		"description": "the ava specs needed in package.json for ts",
+		"body": [
+			"\"ava\": {",
+			"    \"files\": [",
+			"      \"test/**/*.test.ts\"",
+			"    ],",
+			"    \"extensions\": [",
+			"      \"ts\"",
+			"    ],",
+			"    \"require\": [",
+			"      \"ts-node/register\"",
+			"    ]",
+			"  }"
+		]
+	},
+}

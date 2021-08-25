@@ -1,0 +1,29 @@
+{
+    "name": "ava-recipes",
+    "displayName": "ava-recipes",
+    "description": "snippets used in a webinar to get going quickly with unit testing",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.59.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "json",
+                "path": "./snippets/config.code-snippets"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/learning.code-snippets"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    },
+    "publisher": "YisroelYakovson"
+}

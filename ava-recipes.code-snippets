@@ -1,0 +1,121 @@
+{
+	"Add ava to package.json": {
+		"scope": "json",
+		"prefix": "ava",
+		"description": "the ava specs needed in package.json for ts",
+		"body": [
+			"\"ava\": {",
+			"    \"files\": [",
+			"      \"test/**/*.test.ts\"",
+			"    ],",
+			"    \"extensions\": [",
+			"      \"ts\"",
+			"    ],",
+			"    \"require\": [",
+			"      \"ts-node/register\"",
+			"    ]",
+			"  }"
+		]
+	},
+	"tsconfig file contents": {
+		"scope": "json, tsconfig.json",
+		"prefix": "tsconfig",
+		"description": "the complete contents of a tsconfig file",
+		"body": [
+			"{",
+			"    \"compilerOptions\": {",
+			"      \"declaration\": true,",
+			"      \"importHelpers\": true,",
+			"      \"module\": \"commonjs\",",
+			"      \"outDir\": \"lib\",",
+			"      \"rootDirs\": [\"./src\", \"./test\"],",
+			"      \"strict\": true,",
+			"      \"target\": \"es2017\"",
+			"    },",
+			"    \"include\": [",
+			"      \"src/**/*\"",
+			"    ]",
+			"}"
+		]
+	},
+	"test a private function": {
+		"scope": "typescript",
+		"prefix": "learn-private",
+		"body": [
+			"const rewire = require('rewire');",
+			"let ${1:module} = rewire('${2:path}${1:module}') //[4a]",
+			"const ${3:function}$Stub = ${1:module}.__get__('${3:function}') //[4b]",
+			"//[4c] test the stub..."
+		]
+	},
+	"result-is": {
+		"scope": "typescript",
+		"prefix": "learn-result-is",
+		"body": [
+			"const result = ${1:called}",
+			"t.is(result, ${2:expected});"
+		]
+	},
+	"stub a function": {
+		"scope": "typescript",
+		"prefix": "learn-stub",
+		"body": [
+			"const sinon = require('sinon');",
+			"let sandbox = sinon.createSandbox() //[5a]",
+			"",
+			"const ${1:module} = require('${2:modulePath}${1:module}'); //[5b]",
+			"const ${3:func}Fake = ()=> { //[5c]",
+			"\t// replacement code here...",
+			"}",
+			"",
+			"sandbox.stub(${1:module}, '${3:func}') //[5d]",
+			"\t.callsFake(${3:func}Fake)",
+			"",
+			"//[5e] use stub here...",
+			"",
+			"sandbox.restore() //[5f]"
+		]
+	},
+	"stub a private function": {
+		"scope": "typescript",
+		"prefix": "learn-stub-private",
+		"body": [
+			"const rewire = require('rewire')",
+			"let ${1:module}Mod = rewire('${2:path}${1:module}') //[6a]",
+			"",
+			"const ${3:func}Fake = () => { //[6b]",
+			"    // replacement code here",
+			"}",
+			"",
+			"const ${3:func}Revert = ${1:module}Mod.__set__('${3:func}', ${3:func}Fake ) //[6c]",
+			"",
+			"//[6d] run tests here...",
+			"",
+			"${3:func}Revert() //[6e]",
+			""
+		]
+	},
+	"create a basic test": {
+		"scope": "typescript",
+		"prefix": "learn-test",
+		"body": [
+			"import test from 'ava' //[2b]",
+			"",
+			"test('${1:name}', t => {  //[2d]",
+			"\tconst result = ${1:name}(${2:params}) //[2e]",
+			"\tt.is(result, ${3:expected})",
+			"})"	
+		]
+	},
+	"test for an error": {
+		"scope": "typescript",
+		"prefix": "learn-throws-expect",
+		"body": [
+			"const error = t.throws(() => { //[3a]",
+				"\t${1:body}",
+			 "})",
+			 "",
+			 "t.regex(error.message, /${2:regex}/) //[3a]"
+		]
+	}
+}

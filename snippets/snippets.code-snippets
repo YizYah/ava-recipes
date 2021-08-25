@@ -1,0 +1,74 @@
+{
+	"test a private function": {
+		"prefix": "private",
+		"body": [
+			"const rewire = require('rewire');",
+			"let ${1:module} = rewire('${2:path}${1:module}')",
+			"const ${3:function}$Stub = ${1:module}.__get__('${3:function}')"
+		]
+	},
+	"result-is": {
+		"prefix": "result-is",
+		"body": [
+			"const result = ${1:called}",
+			"t.is(result, ${2:expected});"
+		]
+	},
+	"stub a function": {
+		"prefix": "stub",
+		"body": [
+			"const sinon = require('sinon');",
+			"let sandbox = sinon.createSandbox()",
+			"",
+			"const ${1:module} = require('${2:modulePath}${1:module}');",
+			"const ${3:func}Fake = ()=> {",
+			"\t// replacement code here...",
+			"}",
+			"",
+			"sandbox.stub(${1:module}, '${3:func}')",
+			"\t.callsFake(${3:func}Fake)",
+			"",
+			"// use stub here...",
+			"",
+			"sandbox.restore()"
+		]
+	},
+	"stub a private function": {
+		"prefix": "stub-private",
+		"body": [
+			"const rewire = require('rewire')",
+			"let ${1:module}Mod = rewire('${2:path}${1:module}')",
+			"",
+			"const ${3:func}Fake = () => {",
+			"    // replacement code here",
+			"}",
+			"",
+			"const ${3:func}Revert = ${1:module}Mod.__set__('${3:func}', ${3:func}Fake )",
+			"",
+			"// run tests here...",
+			"",
+			"${3:func}Revert()",
+			""
+		]
+	},
+	"create a basic test": {
+		"prefix": "test",
+		"body": [
+			"import test from 'ava' //[b]",
+			"",
+			"test('${1:name}', t => {  //[d]",
+			"\tconst result = ${1:name}(${2:params}) //[e]",
+			"\tt.is(result, ${3:expected});",
+			"})"	
+		]
+	},
+	"test for an error": {
+		"prefix": "throws-expect",
+		"body": [
+			"const error = t.throws(() => {",
+				"\t${1:body}",
+			 "})",
+			 "",
+			 "t.regex(error.message, /${2:regex}/);"
+		]
+	}}
