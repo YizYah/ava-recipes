@@ -2,7 +2,7 @@
     "name": "ava-recipes",
     "displayName": "ava-recipes",
     "description": "snippets used in a webinar to get going quickly with unit testing",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "engines": {
         "vscode": "^1.59.0"
     },
