@@ -4,6 +4,14 @@ All notable changes to the "ava-recipes" extension will be documented in this fi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [1.0.0] - 2021-08-26
+### Added
+- learning notes
 
-- Initial release
+## [1.0.1] - 2021-08-26
+### Fixed
+- updated the `test-no-content` key to have a different value than that for `test`, because it had overwritten it.
+
+## [1.0.1] - 2021-08-26
+### Added
+- better README documentation
