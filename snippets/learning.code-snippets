@@ -6,7 +6,7 @@
 			"const rewire = require('rewire');",
 			"let ${1:module} = rewire('${2:path}${1:module}') //[4a]",
 			"const ${3:function}$Stub = ${1:module}.__get__('${3:function}') //[4b]",
-			"//[4c] test the stub...",
+			"//[4c] test...",
 			"$0"
 		]
 	},
@@ -66,7 +66,7 @@
 			"test('${1:name}', t => {  //[2d]",
 			"\tconst result = ${1:name}(${2:params}) //[2e result-is]",
 			"\tt.is(result, ${3:expected})",
-			"//run tests"
+			"//run tests",
 			"})"
 		]
 	},

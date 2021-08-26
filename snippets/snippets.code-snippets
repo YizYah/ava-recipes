@@ -28,7 +28,7 @@
 			"sandbox.stub(${1:module}, '${3:func}')",
 			"\t.callsFake(${3:func}Fake)",
 			"",
-			"// use stub here...",
+			"// run tests here with stub...",
 			"",
 			"sandbox.restore()"
 		]
@@ -62,7 +62,7 @@
 			"})"	
 		]
 	},
-	"create a basic test": {
+	"create a basic test with no content": {
 		"prefix": "test-no-content",
 		"body": [
 			"import test from 'ava'",
