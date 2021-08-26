@@ -14,8 +14,8 @@
 		"scope": "typescript",
 		"prefix": "learn-result-is",
 		"body": [
-			"const result = ${1:called}",
-			"t.is(result, ${2:expected});"
+			"const result = ${1:called} // execution",
+			"t.is(result, ${2:expected}) // assertion"
 		]
 	},
 	"stub a function": {
@@ -23,17 +23,17 @@
 		"prefix": "learn-stub",
 		"body": [
 			"const sinon = require('sinon');",
-			"let sandbox = sinon.createSandbox() //[5a]",
+			"let sandbox = sinon.createSandbox() //[5a declare sandbox]",
 			"",
-			"const ${1:module} = require('${2:modulePath}${1:module}'); //[5b]",
-			"const ${3:func}Fake = ()=> { //[5c]",
+			"const ${1:module} = require('${2:modulePath}${1:module}'); //[5b require module]",
+			"const ${3:func}Fake = ()=> { //[5c define fake]",
 			"\t// replacement code here...$0",
 			"}",
 			"",
-			"sandbox.stub(${1:module}, '${3:func}') //[5d]",
+			"sandbox.stub(${1:module}, '${3:func}') //[5d declare stub]",
 			"\t.callsFake(${3:func}Fake)",
 			"",
-			"//[5e] use stub here...",
+			"//[5e test] use stub here...",
 			"",
 			"sandbox.restore() //[5f]"
 		]
@@ -43,17 +43,17 @@
 		"prefix": "learn-stub-private",
 		"body": [
 			"const rewire = require('rewire')",
-			"let ${1:module}Mod = rewire('${2:path}${1:module}') //[6a]",
+			"let ${1:module}Mod = rewire('${2:path}${1:module}') //[6a require module]",
 			"",
-			"const ${3:func}Fake = () => { //[6b]",
+			"const ${3:func}Fake = () => { //[6b fake function]",
 			"    // replacement code here",
 			"}",
 			"",
-			"const ${3:func}Revert = ${1:module}Mod.__set__('${3:func}', ${3:func}Fake ) //[6c]",
+			"const ${3:func}Revert = ${1:module}Mod.__set__('${3:func}', ${3:func}Fake ) //[6c assign stub]",
 			"",
 			"//[6d] run tests here...",
 			"$0",
-			"${3:func}Revert() //[6e]",
+			"${3:func}Revert() //[6e restore module]",
 			""
 		]
 	},
@@ -61,23 +61,24 @@
 		"scope": "typescript",
 		"prefix": "learn-test",
 		"body": [
-			"import test from 'ava' //[2b]",
-			"",
+			"import test from 'ava' //[2b test runner]",
+			"//[2c import needed modules here...",
 			"test('${1:name}', t => {  //[2d]",
-			"\tconst result = ${1:name}(${2:params}) //[2e]",
+			"\tconst result = ${1:name}(${2:params}) //[2e result-is]",
 			"\tt.is(result, ${3:expected})",
-			"})"	
+			"//run tests"
+			"})"
 		]
 	},
 	"test for an error": {
 		"scope": "typescript",
 		"prefix": "learn-throws-expect",
 		"body": [
-			"const error = t.throws(() => { //[3a]",
+			"const error = t.throws(() => { //[3a assign variable]",
 				"\t${1:body}",
 			 "})",
 			 "",
-			 "t.regex(error.message, /${2:regex}/) //[3a]"
+			 "t.regex(error.message, /${2:regex}/) //[3b assertion]"
 		]
 	}
 }

@@ -46,7 +46,7 @@
 			"const ${3:func}Revert = ${1:module}Mod.__set__('${3:func}', ${3:func}Fake )",
 			"",
 			"// run tests here...",
-			"",
+			"$0",
 			"${3:func}Revert()",
 			""
 		]
@@ -54,11 +54,21 @@
 	"create a basic test": {
 		"prefix": "test",
 		"body": [
-			"import test from 'ava' //[b]",
+			"import test from 'ava'",
 			"",
-			"test('${1:name}', t => {  //[d]",
-			"\tconst result = ${1:name}(${2:params}) //[e]",
+			"test('${1:name}', t => {",
+			"\tconst result = ${1:name}(${2:params})",
 			"\tt.is(result, ${3:expected});",
+			"})"	
+		]
+	},
+	"create a basic test": {
+		"prefix": "test-no-content",
+		"body": [
+			"import test from 'ava'",
+			"",
+			"test('${1:name}', t => {",
+			"\t$0",
 			"})"	
 		]
 	},
