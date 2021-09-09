@@ -19,3 +19,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [1.0.3] - 2021-09-09
 ### Added
 - added javascript capability
+
+## [1.0.4] - 2021-09-09
+### Added
+- added `throws-expect-async`. Will save a lot of frustration caused by a missing `await` somewhere.

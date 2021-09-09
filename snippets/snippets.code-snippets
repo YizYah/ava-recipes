@@ -81,4 +81,14 @@
 			 "",
 			 "t.regex(error.message, /${2:regex}/);"
 		]
+	},
+	"test for an error in an async function": {
+		"prefix": "throws-expect-async",
+		"body": [
+			"const error = await t.throwsAsync(async () => {",
+				"\tawait ${1:function}(${2:params})",
+			 "})",
+			 "",
+			 "t.regex(error.message, /${3:regex}/);"
+		]
 	}}
