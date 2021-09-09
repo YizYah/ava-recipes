@@ -12,6 +12,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Fixed
 - updated the `test-no-content` key to have a different value than that for `test`, because it had overwritten it.
 
-## [1.0.1] - 2021-08-26
+## [1.0.2] - 2021-08-26
 ### Added
 - better README documentation
+
+## [1.0.3] - 2021-09-09
+### Added
+- added javascript capability

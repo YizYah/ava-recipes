@@ -66,7 +66,6 @@
 			"test('${1:name}', t => {  //[2d]",
 			"\tconst result = ${1:name}(${2:params}) //[2e result-is]",
 			"\tt.is(result, ${3:expected})",
-			"//run tests",
 			"})"
 		]
 	},

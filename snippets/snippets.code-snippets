@@ -56,7 +56,7 @@
 		"body": [
 			"import test from 'ava'",
 			"",
-			"test('${1:name}', t => {",
+			"test('${1:name}', ${2|t, async t|} => {",
 			"\tconst result = ${1:name}(${2:params})",
 			"\tt.is(result, ${3:expected});",
 			"})"	
@@ -67,7 +67,7 @@
 		"body": [
 			"import test from 'ava'",
 			"",
-			"test('${1:name}', t => {",
+			"test('${1:name}', ${2|t, async t|} => {",
 			"\t$0",
 			"})"	
 		]
