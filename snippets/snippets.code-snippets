@@ -57,8 +57,8 @@
 			"import test from 'ava'",
 			"",
 			"test('${1:name}', ${2|t, async t|} => {",
-			"\tconst result = ${1:name}(${2:params})",
-			"\tt.is(result, ${3:expected});",
+			"\tconst result = ${1:name}(${3:params})",
+			"\tt.is(result, ${4:expected});",
 			"})"	
 		]
 	},
