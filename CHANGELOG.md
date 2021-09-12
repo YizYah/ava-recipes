@@ -23,3 +23,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [1.0.4] - 2021-09-09
 ### Added
 - added `throws-expect-async`. Will save a lot of frustration caused by a missing `await` somewhere.
+
+## [1.0.5] - 2021-09-12
+### Fixed
+- fixed `step`. It had two tab stops with the same number.
