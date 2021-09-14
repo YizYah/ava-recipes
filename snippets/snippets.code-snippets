@@ -28,7 +28,9 @@
 			"sandbox.stub(${1:module}, '${3:func}')",
 			"\t.callsFake(${3:func}Fake)",
 			"",
-			"// run tests here with stub...",
+			"// include here any imports for code calling '${3:func}'...",
+			"",
+			"// run tests here for the code calling '${3:func}'...",
 			"",
 			"sandbox.restore()"
 		]

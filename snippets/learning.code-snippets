@@ -33,7 +33,9 @@
 			"sandbox.stub(${1:module}, '${3:func}') //[5d declare stub]",
 			"\t.callsFake(${3:func}Fake)",
 			"",
-			"//[5e test] use stub here...",
+			"// NOTE: put here any imports for code calling '${3:func}'...",
+			"",
+			"//[5e test] test the code calling '${3:func}'...",
 			"",
 			"sandbox.restore() //[5f]"
 		]

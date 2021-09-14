@@ -27,3 +27,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [1.0.5] - 2021-09-12
 ### Fixed
 - fixed `step`. It had two tab stops with the same number.
+
+## [1.0.6] - 2021-09-14
+### Added
+- `stub` and `learn-stub` now generate comments explaining where to insert imports for code that uses the stub.
