@@ -1,6 +1,6 @@
 # ava-recipes README
 
-A set of snippets intended for the free [crash course webinar](https://youtu.be/i0NsmEfn0XU) on unit testing  a node typescript application using ava.  Check out the [Repo for the class](https://github.com/YizYah/testingWebinar) which gives an explanation of all of the recipes.
+A set of snippets intended for the free [crash course webinar](https://youtu.be/i0NsmEfn0XU) on unit testing  a node typescript application using ava.  Check out the [Repo for the class](https://github.com/YizYah/testingWebinar) and its [wiki](https://github.com/YizYah/testingWebinar/wiki) which gives an explanation of all of the recipes.
 
 It's intended for students there, but in truth it could be useful for anyone.
 
@@ -41,6 +41,4 @@ These are not intended to be perfect, just to save some time.  You can expect to
 
 ## Release Notes
 
-### 1.0.0
-
-Initial release.
+Check out the [Change Log](CHANGELOG.md)

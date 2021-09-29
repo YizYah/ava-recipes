@@ -31,3 +31,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [1.0.6] - 2021-09-14
 ### Added
 - `stub` and `learn-stub` now generate comments explaining where to insert imports for code that uses the stub.
+
+## [1.0.7] - 2021-09-29
+### Added
+- `stub` and `learn-stub` now use rewire.
