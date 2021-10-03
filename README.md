@@ -22,14 +22,14 @@ Both do all of the Recipes below, except for the `test-no-content` which does no
 
 #### Testing
 
-1. **test** a basic test.  That's all you need for a public function.
-2. **test-private** Sets up a test for a private function using rewire.
-3. **test-no-content** The same as test, but without the result-is. Can be combined better private tests.
+1. **new-normal-test** a basic sync test.  Set up with a default result-is.
+2. **new-async-test** a basic async test. Set up with a default result-is.
+3. **new-test-no-content** a basic test with no content added yet.  Lets you select normal or async.
 
 #### Stubbing
 
-1. **stub** stub a public function.
-2. **stub-private** stub a private function.
+1. **stub-constant** stub a function or other constant in the file to test.
+2. **stub-private** stub an imported module in the file to test.
 
 #### AVA specs for Typescript
 
