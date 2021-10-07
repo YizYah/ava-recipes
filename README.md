@@ -9,9 +9,9 @@ It's intended for students there, but in truth it could be useful for anyone.
 There are two sets of snippets for typescript test files:
 
 1. For versions that insert as comments the step in a recipe, the prefix (what you have to type) starts with "learn".  For instance, `learn-throws-expect`.  The "learn" versions specify the step numbers for a given recipe as comments.
-2. For any others, the prefix is just the name of the recipe.
+2. For any others, the prefix is normally just the name of the recipe. One exception is "new" instead of "test", 
 
-Both do all of the Recipes below, except for the `test-no-content` which does not exist with a `learn` prefix.
+Not every snippet has a `learn` version.
 
 ### Recipes
 
@@ -22,14 +22,13 @@ Both do all of the Recipes below, except for the `test-no-content` which does no
 
 #### Testing
 
-1. **new-normal-test** a basic sync test.  Set up with a default result-is.
+1. **new-normal-test** a basic sync test.  Set up with a default 
 2. **new-async-test** a basic async test. Set up with a default result-is.
-3. **new-test-no-content** a basic test with no content added yet.  Lets you select normal or async.
+3. **new-test-no-content** a basic test with no content added yet. Lets you select normal or async.
 
-#### Stubbing
+### Stubbing
 
-1. **stub-constant** stub a function or other constant in the file to test.
-2. **stub-private** stub an imported module in the file to test.
+**stub-constant** stub a function or other imported contant.
 
 #### AVA specs for Typescript
 

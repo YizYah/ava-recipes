@@ -14,43 +14,47 @@
 			"t.is(result, ${2:expected});"
 		]
 	},
-	"stub an imported module": {
-		"prefix": "stub-module",
-		"body": [
-			"const rewire = require('rewire')",
-			"",
-			"const ${1:constToStub}Fake = ()=> {",
-			"\t// replacement code here...",
-			"}",
-			"const ${2:fileToTest} = rewire('${3:srcFilePath}${2:fileToTest}');",
-			"",
-			"${2:fileToTest}.__set__('${4:moduleForConst}', {",
-			"   ${1:constToStub}: ${1:constToStub}Fake",
-			"  })",
-			"",
-			"// run tests here for the code calling '${1:constToStub}'...",
-			"$0",
-			""
-		]
-	},
+	// "stub an imported module": {
+	// 	"prefix": "stub-module",
+	// 	"body": [
+	// 		"const rewire = require('rewire')",
+	// 		"",
+	// 		"const ${1:constToStub}Fake = ()=> {",
+	// 		"\t// replacement code here...",
+	// 		"}",
+	// 		"const ${2:fileToTest} = rewire('${3:srcFilePath}${2:fileToTest}');",
+	// 		"",
+	// 		"${2:fileToTest}.__set__('${4:moduleForConst}', {",
+	// 		"   ${1:constToStub}: ${1:constToStub}Fake",
+	// 		"  })",
+	// 		"",
+	// 		"// run tests here for the code calling '${1:constToStub}'...",
+	// 		"$0",
+	// 		""
+	// 	]
+	// },
 	"stub a function or constant": {
 		"prefix": "stub-constant",
 		"body": [
-			"const rewire = require('rewire')",
-			"let ${1:testedFile} = rewire('${2:path}${1:testedFile}')",
+			"const proxyquire = require('proxyquire')",
 			"",
-			"const ${3:constant}Fake = () => {",
-			"    // replacement code here",
+			"const ${1:constantToFake}Fake = ()=> {",
+			"     // put here fake code for '${1:constantToFake}'...",
 			"}",
 			"",
-			"${1:testedFile}.__set__('${3:constant}', ${3:constant}Fake )",
+			"const ${2:testedFile}Module = proxyquire('${3:path}${2:testedFile}', {",
+			"    '${4:modulePathFromTestedFile}': {",
+			"        ${1:constantToFake}: ${1:constantToFake}Fake" ,
+			"    }",
+			"}); ",
+			"const {${5:functionToTest}} = ${2:testedFile}Module",
 			"",
-			"// run tests here using ${3:constant}",
+			"// run tests below as normal for code using '${1:constantToFake}'",
 			"$0",
 			""
 		]
 	},
-	"create a basic test": {
+	"new test file with a basic test": {
 		"prefix": "new-normal-test",
 		"body": [
 			"import test from 'ava'",
@@ -61,7 +65,7 @@
 			"})"	
 		]
 	},
-	"create a basic async test": {
+	"new test file with an async test": {
 		"prefix": "new-async-test",
 		"body": [
 			"import test from 'ava'",
@@ -72,7 +76,7 @@
 			"})"	
 		]
 	},
-	"create a basic test with no content": {
+	"new test file with an empty test": {
 		"prefix": "new-test-no-content",
 		"body": [
 			"import test from 'ava'",

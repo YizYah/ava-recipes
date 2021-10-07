@@ -58,3 +58,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - `stub` and `stub-private` updated to `stub-constant` and `stub-module` and refactored.
 - `test...` snippets changed to `new...` to distinguish from the several `test...` snippets in the popular `AVA` package.  Also created an async version.
+
+## [1.1.0] - 2021-10-07
+
+### Updated
+
+- `stub` now uses proxyquire instead of rewire.
+- `stub-module` now removed.

@@ -18,23 +18,26 @@
 			"t.is(result, ${2:expected}) // assertion"
 		]
 	},
-	"stub a function": {
+	"stub a constant or function": {
 		"scope": "typescript",
 		"prefix": "learn-stub",
 		"body": [
-			"const rewire = require('rewire') // stub 1: include rewire",
+			"const proxyquire = require('proxyquire') // stub 1: include proxyquire",
 			"",
-			"const ${1:constToStub}Fake = ()=> { // stub 2: define a fake version",
-			"\t// replacement code here...",
+			"const ${1:constantToFake}Fake = ()=> { // stub 2: define a fake version",
+			"     // put here fake code for '${1:constantToFake}'...",
 			"}",
-			"const ${2:fileToTest} = rewire('${3:srcFilePath}${2:fileToTest}'); // stub 3: import the file to test using rewire",
 			"",
-			"${2:fileToTest}.__set__('${4:moduleForConst}', {  // stub 4: set the function to its fake version",
-			"   ${1:constToStub}: ${1:constToStub}Fake",
-			"  })",
+			"const ${2:testedFile}Module = proxyquire('${3:path}${2:testedFile}', {  // stub 3: import the file to test using proxyquire",
+			"    '${4:modulePathFromTestedFile}': {",
+			"        ${1:constantToFake}: ${1:constantToFake}Fake // stub 4: set the constant to fake version" ,
+			"    }",
+			"}); ",
+			"const {${5:functionToTest}} = ${2:testedFile}Module",
 			"",
-			"// stub 5: run tests here for the code calling '${1:constToStub}'...",
-		]
+			"// stub 5: run tests below as normal for code using '${1:constantToFake}'",
+			"$0",
+			""		]
 	},
 	"stub a private function": {
 		"scope": "typescript",
@@ -55,9 +58,9 @@
 			""
 		]
 	},
-	"create a basic test": {
+	"new annotated test file with a basic test": {
 		"scope": "typescript",
-		"prefix": "learn-test",
+		"prefix": "learn-new-normal-test",
 		"body": [
 			"import test from 'ava' //[2b test runner]",
 			"//[2c import needed modules here...",
