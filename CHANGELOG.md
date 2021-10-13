@@ -65,3 +65,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - `stub` now uses proxyquire instead of rewire.
 - `stub-module` now removed.
+
+## [1.1.1] - 2021-10-13
+
+### Updated
+
+- the documentation gives a link to the latest webinar.
+- a bit more about the theory of the approach in the documenation.
