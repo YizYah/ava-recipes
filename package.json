@@ -1,10 +1,11 @@
 {
     "name": "ava-recipes",
     "displayName": "ava-recipes",
-    "description": "snippets used in a webinar to get going quickly with unit testing",
-    "version": "1.1.1",
+    "description": "snippets to get going quickly with unit and int testing",
+    "icon": "images/ava-recipes-icon.png",
+    "version": "1.1.2",
     "engines": {
-        "vscode": "^1.59.0"
+        "vscode": "^1.62.0"
     },
     "categories": [
         "Snippets"

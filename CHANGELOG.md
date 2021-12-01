@@ -72,3 +72,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - the documentation gives a link to the latest webinar.
 - a bit more about the theory of the approach in the documenation.
+
+## [1.1.2] - 2021-12-01
+
+### Updated
+
+- icon added
+- reference to ava-launch
